@@ -71,7 +71,32 @@ For the given use case, the Autoregressive-Integrated-Moving-Average Model (ARIM
 - Null Hypothesis holds true.
 
 ## Stationarity of Timeseries
+The stationarity of the given timeseries is determined using the Augmented Dickey-Fuller stationarity test. Following is the premise of the test.
 
+> **Null-Hypothesis** of the Dickey-Fuller test states that the timeseries is non-stationary (presence of unit root).
+
+> **Alternate Hypothesis** of Dickey-Fuller test states that the times series is stationary (absence of unit root).
+
+### Results of Augmented Dickey-Fuller Test:
+The given graph represents the data of a 3 months subset. This will ease the visual interpretation of the plots.
+
+<p align="center"><img src="readme/graphs/06.png" title="Stationarity Test" width=100%></p>
+
+|Statistic|Value|
+|:---:|:---:|
+|Test Statistic|-26.380273|
+|p-value|0.000000|
+|# Lags Used|37.000000|
+|Number of Observations Used|8602.000000|
+|Critical Value / Significance Level (1%)|-3.431110|
+|Critical Value / Significance Level (5%)|-2.861876|
+|Critical Value / Significance Level (10%)|-2.566949|
+
+**Conclusion**
+
+- The p-value of 0 which is less than our 1% significance level value. This indicates that the null-hypothesis is invalid, with a certainity of 99%. Hence, timeseries is stationary.
+- The Test Statistic is much lower than Critical Values. Hence, the null-hypothesis can be rejected and the timeseries is indeed stationary.
+- There is no need for applying any de-trending transformation or differencing the timeseries as it is stationary.
 
 ## Decomposition of Timeseries
 
