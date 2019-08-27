@@ -1,4 +1,4 @@
-# Traffic-Congestion-EDA
+# Traffic Congestion: Exploratory Data Analysis
 The objective of this project is to study the effectiveness of various machine learning models for the analysis and forecasting of a road traffic data timeseries. Subsequently, the most suitable model for the use-case has been determined and a prototype application called Traffic Congestion Management System is developed using R and Shiny Dashboard. The web application can predict the traffic conditions for a particular road intersection by training with the traffic data in a timeseries format.
 
 This repository is the exploratory data analysis for the road traffic dataset used in the Traffic Congestion project. The EDA is performed using Python and its libraries - statsmodel, matplotlib, pandas and numpy. Check the Jupyter Notebook <a href='Traffic Congestion - Data Exploration.ipynb'>here</a>.
@@ -102,6 +102,23 @@ The given graph represents the data of a 3 months subset. This will ease the vis
 
 
 ## ACF and PACF Analysis
+We will use the most suitable model out of AR, MA, ARMA and ARIMA models for forecasting in the modeling stage. So, in this section we will determine the various parameters that are required for the ARIMA model.
 
+- 'p' or the number of Auto-Regressive terms: These are the lags of forecasted variable
+- 'q' or the number of Moving-Average terms: These are the lagging forecasted error
+- 'd' or number of differences: This is the number of non seasonal differences
+
+A chart describing the right approach for selecting the AR or MA processes:
+
+||ACF|PACF|
+|:-:|:-:|:-:|
+|AR|Tails off gradually|Significant till 'n' lags|
+|MA|Significant till 'n' lags|Tails off gradually|
+|ARMA|Tails off gradually|Tails off gradually|
+
+<p align="center"><img src="readme/graphs/09.png" title="ACF Plot" width=100%></p>
+
+<p align="center"><img src="readme/graphs/10.png" title="PACF Plot" width=100%></p>
 
 ## Conclusion
+- The most suitable model for the timeseries of given use-case appears to be AR or autoregressive model.
