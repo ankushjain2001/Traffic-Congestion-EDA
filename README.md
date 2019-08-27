@@ -20,7 +20,7 @@ This repository is the exploratory data analysis for the road traffic dataset us
 
 <p align="center"><img src="readme/graphs/01.png" title="Line Plot" width=100%></p>
 
-## Proposed Machine Learning Model for the problem
+### Proposed Machine Learning Model for the problem
 For the given use case, the Autoregressive-Integrated-Moving-Average Model (ARIMA) is considered for forecasting. The results of AR, MA, ARMA and ARIMA models will be analyzed. However, before moving forward to the forecasting stage, we will study the pre-conditions of these models.
 - Hypothesis for the trend and seasonality in the timeseries will be tested
 - Stationarity of the timeseries will be tested using Dicky-Fuller Test
@@ -28,7 +28,47 @@ For the given use case, the Autoregressive-Integrated-Moving-Average Model (ARIM
 - ACF and PACF analysis will be performed
 
 ## Hypothesis Testing
+### 1. Traffic Flow Trend
+**Claim:** With increase in time, the population of the area will probably increase. Hence, an upward trend can be expected in the traffic flow as the time goes by.
 
+<p align="center"><img src="readme/graphs/02.png" title="Trend Graph" width=50%></p>
+
+**Conclusion** 
+
+- No trend exists. Alternative hypothesis holds true.
+
+### 2. Daily Seasonality
+**Claim:** The road traffic flow will dependent on the different hours of the day (rush hours vs off hours). Hence, daily seasonality can be expected.
+
+<p align="center"><img src="readme/graphs/03.png" title="Daily Seasonality Graph" width=100%></p>
+
+**Conclusion**
+
+- It can be concluded that there is a daily seasonality in the data as similar patterns can be observed in traffic frequency for particular time intervals.
+- The rush hours for weekdays are around 11:45 in the morning and 16:15 in the evening.
+- Null Hypothesis holds true.
+
+### 3. Weekly Seasonality
+**Claim:** The road traffic flow on weekdays will be greater than weekends. Hence weekly seasonality can be expected.
+
+<p align="center"><img src="readme/graphs/04.png" title="Weekly Seasonality Graph" width=50%></p>
+
+**Conclusion**
+
+- It can be concluded that there is a weekly seasonality in the data as similar patterns can be observed in traffic frequency for each week at a monthly scale.
+- The weekdays have more traffic with the highest reaching on Friday. The weekends have lesser traffic.
+- Null Hypothesis holds true.
+
+### 4. Annual Seasonality
+**Claim:** The road traffic flow will dependent on the different months of the year, due to change in weather conditions. Hence annual seasonality can be expected.
+
+<p align="center"><img src="readme/graphs/05.png" title="Annual Seasonality Graph" width=50%></p>
+
+**Conclusion**
+
+- It can be concluded that there is a annual seasonality in the data as similar patterns can be observed in traffic frequency for each month at an yearly scale.
+- The average traffic flow rises till August and then decreases till December-January.
+- Null Hypothesis holds true.
 
 ## Stationarity of Timeseries
 
