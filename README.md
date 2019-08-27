@@ -122,3 +122,6 @@ A chart describing the right approach for selecting the AR or MA processes:
 
 ## Conclusion
 - The most suitable model for the timeseries of given use-case appears to be AR or autoregressive model.
+- However, for modeling with ARIMA, following parameters can be used.
+  - From the given PACF plot, we can determine that the value of 'p' is 2.
+  - From the given ACF plot, we can determine that the value of 'q' is 10.
