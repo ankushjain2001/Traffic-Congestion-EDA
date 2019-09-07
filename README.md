@@ -100,7 +100,6 @@ The given graph represents the data of a 3 months subset. This will ease the vis
 
 ## Decomposition of Timeseries
 
-
 ## ACF and PACF Analysis
 We will use the most suitable model out of AR, MA, ARMA and ARIMA models for forecasting in the modeling stage. So, in this section we will determine the various parameters that are required for the ARIMA model.
 
